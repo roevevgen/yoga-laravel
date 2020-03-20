@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('sites.content');
+Route::get('/about', function () {
+    return view('sites.pages.about');
+});
+
+Route::get('/contacts', function () {
+    return view('sites.pages.contact');
+});
+Route::get('/photo', function () {
+    return view('sites.pages.foto');
+});
+Route::get('/price', function () {
+    return view('sites.pages.price');
 });
 
 Auth::routes();

@@ -6,16 +6,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title')</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic-ext"
-          rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-grid.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <title>@yield('title') - {{ config('app.name') }}</title>
+
+    @include('sites.partials.style')
+
 
 </head>
 <body>
 
-@include('sites.nav.header')
+@include('sites.partials.header')
 
 <div class="main">
     <div class="container">
@@ -38,36 +37,21 @@
 </div>
 <div class="content">
 
-    @yield('content')
+    <div class="container" id="about">
 
+        @include('sites.partials.aboutus')
 
-    @include('sites.footer.footer')
+        @yield('content')
 
-
-</div>
-<div class="overlay fade">
-    <div class="popup">
-        <div class="popup-close">&times;
-        </div>
-        <div class="popup-title">
-            Форма обратной связи
-        </div>
-        <div class="popup-form">
-            <form action="#" class="main-form">
-                <div class="popup-form-header">
-                    Узнайте больше о своём отдыхе
-                </div>
-                <label class="popup-form__label" for="phone">
-                    Введите ваш номер телефона:
-                </label>
-                <input class="popup-form__input" name="phone" type="tel" required placeholder="+38(093) 973 33 45">
-                <button class="button popup-form__btn">
-                    Оставить заявку!
-                </button>
-            </form>
-        </div>
     </div>
+
+    @include('sites.partials.footer')
+
+
 </div>
+
+@include('sites.partials.popup')
+
 <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 </html>

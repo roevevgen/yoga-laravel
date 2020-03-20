@@ -1,10 +1,10 @@
 @extends('sites.app')
 
-
+@section('title', 'О нас')
 
 @section('content')
 
-    <div class="container" id="about">
+
         <div class="info">
             <div class="info-header">
                 <div class="info-header-tab">Лечение</div>
@@ -167,6 +167,6 @@
                 </form>
             </div>
         </div>
-    </div>
+
 
 @endsection
