@@ -4,7 +4,6 @@
 
 @section('content')
 
-
     <div class="timer">
         <div class="timer-title">Успей забронировать место со скидкой</div>
         <div class="timer-action">

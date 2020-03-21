@@ -15,11 +15,9 @@ class CreateAboutusesTable extends Migration
     {
         Schema::create('aboutuses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('info_header_tab');
-            $table->string('description-title');
-            $table->text('description-text');
-            $table->string('image')->after('slug')->nullable();
-            $table->timestamps();
+            $table->string('description_title');
+            $table->text('description_text');
+            $table->string('image');
         });
     }
 
